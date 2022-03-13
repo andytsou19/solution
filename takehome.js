@@ -37,7 +37,6 @@ if(Array.isArray(array) === false) return null
 if(array.length < 2) return null
 
 const cache = {};
-const possibleResults = [];
 let pairWithSmallestVal = [Infinity,Infinity]
 for(let i = 0; i <array.length; i++){
   const num = typeof array[i] === 'string' ? Number(array[i]) : array[i];
@@ -51,7 +50,6 @@ for(let i = 0; i <array.length; i++){
  
   //found a matching pair 
   if(cache[desiredSum-num]){
-
     const minVal = Math.min(num,cache[desiredSum-num]);
     const maxVal = Math.max(num,cache[desiredSum-num]);
 
